@@ -35,11 +35,8 @@ while bandera:
     if valor == 1:
         rango = random.randrange(1, 10)+1
 
-        #print(random.random()*8.99)
-
         while rango > 1:
             numero_random = random.uniform(0.00, 8.99)
-            #interfaz = random.random()*8.99
             formato_al_numero = float("{:.2f}".format(numero_random))
             lista.append(formato_al_numero)
             rango -= 1
