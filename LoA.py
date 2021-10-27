@@ -19,16 +19,16 @@ while bandera:
     print("12. Salir del programa.")
     valor = int(input())
     if valor == 1:
-        rango = random.randrange(1, 10)
+        rango = random.randrange(1, 10) #de momento este valor va a quedar en 10 para facilitar la programacion pero en realidad tiene que estar en 1 millon como dijo el profe. "Cree una lista de 1 a 1 millon" 
 
         while rango > 1:
-            numero_random = random.uniform(0.00, 8.99)
-            formato_al_numero = float("{:.2f}".format(numero_random))
+            numero_random = random.uniform(0.00, 8.99) # se selecciona un numero de 0.00 a 8.99
+            formato_al_numero = float("{:.2f}".format(numero_random)) # se le da formato al numero anterior para que queden solo dos decimales. Si saben de una forma mejor de como hacerlo por favor hacer el cambio
             lista.append(formato_al_numero)
             rango -= 1
 
-        ordenada = lista.copy()
-        ordenada.sort()
+        ordenada = lista.copy() # se hace una copia real de la lista
+        ordenada.sort() #se ordena la lista
         print(lista)
         input("Presione Enter para volver al menu principal")
         
