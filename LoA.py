@@ -1,4 +1,17 @@
+from os import system, name
 import random
+
+def clear():
+
+    # para windows
+    if name == 'nt':
+        _ = system('cls')
+
+    # para mac o linux
+    else:
+        _ = system('clear')
+
+clear()
 
 lista = []
 ordenada = []
@@ -18,19 +31,24 @@ while bandera:
     print("11. Cantidad de jugadores totales.")
     print("12. Salir del programa.")
     valor = int(input())
+    clear()
     if valor == 1:
-        rango = random.randrange(1, 10) #de momento este valor va a quedar en 10 para facilitar la programacion pero en realidad tiene que estar en 1 millon como dijo el profe. "Cree una lista de 1 a 1 millon" 
+        rango = random.randrange(1, 10)+1
+
+        #print(random.random()*8.99)
 
         while rango > 1:
-            numero_random = random.uniform(0.00, 8.99) # se selecciona un numero de 0.00 a 8.99
-            formato_al_numero = float("{:.2f}".format(numero_random)) # se le da formato al numero anterior para que queden solo dos decimales. Si saben de una forma mejor de como hacerlo por favor hacer el cambio
+            numero_random = random.uniform(0.00, 8.99)
+            #interfaz = random.random()*8.99
+            formato_al_numero = float("{:.2f}".format(numero_random))
             lista.append(formato_al_numero)
             rango -= 1
 
-        ordenada = lista.copy() # se hace una copia real de la lista
-        ordenada.sort() #se ordena la lista
+        ordenada = lista.copy()
+        ordenada.sort()
         print(lista)
         input("Presione Enter para volver al menu principal")
+        clear()
         
     elif valor == 2:
         hierro = []
@@ -67,6 +85,7 @@ while bandera:
             contar += 1
         print(ordenada)
         input("Listas ordenadas. Presione Enter para volver al menu principal")
+        clear()
 
     elif valor == 3:
         contador = 0
@@ -89,6 +108,7 @@ while bandera:
         print("Esta es la lista de gran maestro: ", gran_maestro)
         print("Esta es la lista de retador: ", retador)
         input("Presione Enter para volver al menu principal")
+        clear()
 
     elif valor == 5: 
         cont = 0
@@ -105,6 +125,7 @@ while bandera:
                 print("Jugador #:", cont_two+1)
             cont_two += 1
         input("Presione Enter para volver al menu principal")
+        clear()
 
     elif valor == 6: 
         cont = 0
@@ -121,6 +142,7 @@ while bandera:
                 print("Jugador #:", cont+1)
             cont += 1
         input("Presione Enter para volver al menu principal")
+        clear()
 
     elif valor == 7: 
         cont = 0
@@ -131,23 +153,60 @@ while bandera:
         valor = valor/len(lista)
         print("%.2f" % valor)
         input("Presione Enter para volver al menu principal")
+        clear()
 
     elif valor == 8: 
-        print("0. Hierro")
-        print("1. Bronce")
-        print("2. Plata")
-        print("3. Oro")
-        print("4. Platino")
-        print("5. Diamante")
-        print("6. Maestro")
-        print("7. Gran Maestro")
-        print("8. Retador")
+        if len(hierro) > 0:
+            print("0. Hierro")
+        else:
+            pass
+        
+        if len(bronce) > 0:
+            print("1. Bronce")
+        else:
+            pass
+
+        if len(plata) > 0:
+            print("2. Plata")
+        else:
+            pass
+
+        if len(oro) > 0:
+            print("3. Oro")
+        else:
+            pass
+
+        if len(platino) > 0:
+            print("4. Platino")
+        else:
+            pass 
+        
+        if len(diamante) > 0:
+            print("5. Diamante")
+        else:
+            pass
+
+        if len(maestro) > 0:
+            print("6. Maestro")
+        else:
+            pass
+
+        if len(gran_maestro) > 0:
+            print("7. Gran Maestro")
+        else:
+            pass
+
+        if len(retador) > 0:
+            print("8. Retador")
+        else:
+            pass
+        
         print("9. Volver al menu anterior")
         opcion = int(input("Digite la division que desea ver el promedio"))
         cont = 0
-        bandera = True
+        bandera2 = True
         valor = 0
-        while bandera: 
+        while bandera2: 
             if opcion == 0:
                 while cont < len(hierro):
                     valor += hierro[cont]
@@ -155,6 +214,8 @@ while bandera:
                 valor = valor/len(hierro)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 1:
                 while cont < len(bronce):
@@ -163,6 +224,8 @@ while bandera:
                 valor = valor/len(bronce)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 2:
                 while cont < len(plata):
@@ -171,6 +234,8 @@ while bandera:
                 valor = valor/len(plata)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 3:
                 while cont < len(oro):
@@ -179,6 +244,8 @@ while bandera:
                 valor = valor/len(oro)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 4:
                 while cont < len(platino):
@@ -187,6 +254,8 @@ while bandera:
                 valor = valor/len(platino)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 5:
                 while cont < len(diamante):
@@ -195,6 +264,8 @@ while bandera:
                 valor = valor/len(diamante)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 6:
                 while cont < len(maestro):
@@ -203,6 +274,8 @@ while bandera:
                 valor = valor/len(maestro)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 7:
                 while cont < len(gran_maestro):
@@ -211,6 +284,8 @@ while bandera:
                 valor = valor/len(gran_maestro)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
 
             elif opcion == 8:
                 while cont < len(retador):
@@ -219,26 +294,10 @@ while bandera:
                 valor = valor/len(retador)
                 print("%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
+                bandera2 = False
+                clear()
             else: 
-                bandera = False
+                bandera2 = False
 
     elif valor == 12:
         bandera = False
-
-    
-'''
-#lista por comprension / comprenhension list
-
-hierro = [i for i in lista if i>= 0.00 and i <= 0.99]
-bronce = [i for i in lista if i>= 1.00 and i <= 1.99]
-plata = [i for i in lista if i>= 2.00 and i <= 2.99]
-oro = [i for i in lista if i>= 3.00 and i <= 3.99]
-platino = [i for i in lista if i>= 4.00 and i <= 4.99]
-diamante = [i for i in lista if i>= 5.00 and i <= 5.99]
-maestro = [i for i in lista if i>= 6.00 and i <= 6.99]
-gran_maestro = [i for i in lista if i>= 7.00 and i <= 7.99]
-retador = [i for i in lista if i>= 8.00 and i <= 8.99]
-'''
-
-
-
