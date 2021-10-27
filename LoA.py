@@ -32,11 +32,16 @@ while bandera:
     print("12. Salir del programa.")
     valor = int(input())
     clear()
-    if valor == 1:
-        rango = random.randrange(1, 10)+1
 
-        while rango > 1:
+    if valor == 1:
+        rango = int(input("Digite el tamano de la lista de emparejamiento que desea: "))
+        #rango = random.randrange(1, 10)
+
+        #print(random.random()*8.99)
+
+        while rango > 0:
             numero_random = random.uniform(0.00, 8.99)
+            #interfaz = random.random()*8.99
             formato_al_numero = float("{:.2f}".format(numero_random))
             lista.append(formato_al_numero)
             rango -= 1
@@ -44,7 +49,7 @@ while bandera:
         ordenada = lista.copy()
         ordenada.sort()
         print(lista)
-        input("Presione Enter para volver al menu principal")
+        input("Lista inicial creada! Presione Enter para volver al menu principal")
         clear()
         
     elif valor == 2:
@@ -81,7 +86,7 @@ while bandera:
                 retador.append(ordenada[contar])
             contar += 1
         print(ordenada)
-        input("Listas ordenadas. Presione Enter para volver al menu principal")
+        input("Listas ordenadas creadas! Presione Enter para volver al menu principal")
         clear()
 
     elif valor == 3:
@@ -119,7 +124,7 @@ while bandera:
         cont_two = 0
         while cont_two < len(lista):
             if valor == lista[cont_two]:
-                print("Jugador #:", cont_two+1)
+                print("El jugador con la mayor division es Jugador #:", cont_two+1)
             cont_two += 1
         input("Presione Enter para volver al menu principal")
         clear()
@@ -136,7 +141,7 @@ while bandera:
         cont = 0
         while cont < len(lista):
             if valor == lista[cont]:
-                print("Jugador #:", cont+1)
+                print("El Jugador con la menor division es Jugador #:", cont+1)
             cont += 1
         input("Presione Enter para volver al menu principal")
         clear()
@@ -148,7 +153,7 @@ while bandera:
             valor += lista[cont]
             cont += 1
         valor = valor/len(lista)
-        print("%.2f" % valor)
+        print("El promedio de todas las divisionses es de","%.2f" % valor)
         input("Presione Enter para volver al menu principal")
         clear()
 
@@ -199,7 +204,8 @@ while bandera:
             pass
         
         print("9. Volver al menu anterior")
-        opcion = int(input("Digite la division que desea ver el promedio"))
+        opcion = int(input("Digite la division que desea ver el promedio: "))
+        clear()
         cont = 0
         bandera2 = True
         valor = 0
@@ -209,7 +215,7 @@ while bandera:
                     valor += hierro[cont]
                     cont += 1
                 valor = valor/len(hierro)
-                print("%.2f" % valor)
+                print("El promedio de la division Hierro es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -219,7 +225,7 @@ while bandera:
                     valor += bronce[cont]
                     cont += 1
                 valor = valor/len(bronce)
-                print("%.2f" % valor)
+                print("El promedio de la division Bronce es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -229,7 +235,7 @@ while bandera:
                     valor += plata[cont]
                     cont += 1
                 valor = valor/len(plata)
-                print("%.2f" % valor)
+                print("El promedio de la division Plata es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -239,7 +245,7 @@ while bandera:
                     valor += oro[cont]
                     cont += 1
                 valor = valor/len(oro)
-                print("%.2f" % valor)
+                print("El promedio de la division Oro es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -249,7 +255,7 @@ while bandera:
                     valor += platino[cont]
                     cont += 1
                 valor = valor/len(platino)
-                print("%.2f" % valor)
+                print("El promedio de la division Platino es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -259,7 +265,7 @@ while bandera:
                     valor += diamante[cont]
                     cont += 1
                 valor = valor/len(diamante)
-                print("%.2f" % valor)
+                print("El promedio de la division Diamante es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -269,7 +275,7 @@ while bandera:
                     valor += maestro[cont]
                     cont += 1
                 valor = valor/len(maestro)
-                print("%.2f" % valor)
+                print("El promedio de la division Maestro es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -279,7 +285,7 @@ while bandera:
                     valor += gran_maestro[cont]
                     cont += 1
                 valor = valor/len(gran_maestro)
-                print("%.2f" % valor)
+                print("El promedio de la division Gran Maestro es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
@@ -289,12 +295,140 @@ while bandera:
                     valor += retador[cont]
                     cont += 1
                 valor = valor/len(retador)
-                print("%.2f" % valor)
+                print("El promedio de la division Retador es de","%.2f" % valor)
                 input("Presione Enter para volver al menu principal")
                 bandera2 = False
                 clear()
             else: 
+                clear()
                 bandera2 = False
+                
+    elif valor == 9:
+
+        valor_bronce = 0
+        valor_hierro = 0
+        valor_plata = 0
+        valor_oro = 0
+        valor_platino = 0
+        valor_diamante = 0
+        valor_maestro = 0
+        valor_gran_maestro = 0
+        valor_retador = 0
+
+        contador_promedio = 0
+        
+        if len(hierro) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(hierro):
+                puntuacion = str(hierro[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_hierro = valor/len(hierro)
+                contador_promedio += 1
+        else:
+            valor_hierro = 0
+        
+        if len(bronce) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(bronce):
+                puntuacion = str(bronce[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_bronce = valor/len(bronce)
+                contador_promedio += 1
+        else:
+            valor_bronce = 0
+
+        if len(plata) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(plata):
+                puntuacion = str(plata[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_plata = valor/len(plata)
+                contador_promedio += 1
+        else:
+            valor_plata = 0
+
+        if len(oro) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(oro):
+                puntuacion = str(oro[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_oro = valor/len(oro)
+                contador_promedio += 1
+        else:
+            valor_oro = 0
+
+        if len(platino) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(platino):
+                puntuacion = str(platino[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_platino = valor/len(platino)
+                contador_promedio += 1
+        else:
+            valor_platino = 0
+
+        if len(diamante) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(diamante):
+                puntuacion = str(diamante[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_diamante = valor/len(diamante)
+                contador_promedio += 1
+        else:
+            valor_diamante = 0
+        
+        if len(maestro) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(maestro):
+                puntuacion = str(maestro[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_maestro = valor/len(maestro)
+                contador_promedio += 1
+        else:
+            valor_maestro = 0
+
+        if len(gran_maestro) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(gran_maestro):
+                puntuacion = str(gran_maestro[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_gran_maestro = valor/len(gran_maestro)
+                contador_promedio += 1
+        else:
+            valor_gran_maestro = 0
+
+        if len(retador) > 0:
+            valor = 0
+            cont = 0
+            while cont < len(retador):
+                puntuacion = str(retador[cont])
+                valor += int(puntuacion.split(".")[1])
+                cont += 1
+                valor_retador = valor/len(retador)
+                contador_promedio += 1
+        else:
+            valor_retador = 0
+
+        print("El promedio de puntuacion de todas las divisiones es de","%.2f" % ((valor_hierro + valor_bronce + valor_plata + valor_oro + valor_platino + valor_diamante + valor_gran_maestro + valor_retador) / contador_promedio))
+        input("Digite la tecla Enter para continuar")
+        clear()
 
     elif valor == 12:
+        clear()
         bandera = False
